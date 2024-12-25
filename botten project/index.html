@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Button</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>The Button</h1>
+        <button class="info-button" onclick="toggleDescription()">ℹ️ How to Play</button>
+        <div class="description hidden" id="description">
+            <h2>What is The Button?</h2>
+            <p>The Button is a mysterious entity that must be kept alive. It's connected to 10 lamps that slowly turn off over time.</p>
+            <h3>How to Keep The Button Alive:</h3>
+            <ul>
+                <li>Watch the lamps - they will turn off one by one from left to right</li>
+                <li>Press the button to reset all lamps back to on</li>
+                <li>The lamps change color based on remaining time (Green → Yellow → Red)</li>
+                <li>Your score increases faster as more lamps turn off</li>
+                <li>Between 9 PM and 6 AM, The Button gets tired and moves at half speed</li>
+            </ul>
+        </div>
+        <div class="rules">
+            <p>Score increases faster as more lamps turn off!</p>
+            <p>Press the button to reset the lamps</p>
+        </div>
+        <div class="lamps-container">
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+            <div class="lamp"></div>
+        </div>
+        <button id="theButton">Press Me!</button>
+        <div class="stats">
+            <p>Current Time: <span id="currentTime">00:00:00</span></p>
+            <p>Button Started: <span id="startTime">00:00:00</span></p>
+            <p>Time Remaining: <span id="timer">60</span>s</p>
+            <p>Button Alive For: <span id="aliveTimer">0</span>s</p>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        <div id="gameOver" class="hidden">
+            <h2>Game Over!</h2>
+            <p>Final Score: <span id="finalScore">0</span></p>
+            <p>Button Survived: <span id="finalAliveTime">0</span>s</p>
+            <button id="restartButton">Play Again</button>
+        </div>
+        <div class="comment-section">
+            <h3>Comments</h3>
+            <div id="comments-container"></div>
+            <div class="comment-input">
+                <input type="text" id="commentInput" placeholder="Add a comment...">
+                <button id="addComment">Send</button>
+            </div>
+        </div>
+    </div>
+    <div id="lastColorBanner" class="last-color-banner">
+        <div class="timestamp">
+            <p>Last Click: <span id="bannerLastClick">--</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
